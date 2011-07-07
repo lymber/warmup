@@ -40,9 +40,10 @@ int separa (int v[], int p, int r){
 
 void quicksort (int v[], int p, int r){
 	int j;
-	while (p < r){
+
+	if (p < r) {
 		j = separa (v, p, r);
 		quicksort (v, p, j-1);
-		p = j + 1;
+		quicksort (v, j+1, r);
 	}
 }
