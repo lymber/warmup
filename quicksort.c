@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /* Funções abaixo copiadas da página do professor Paulo Feofiloff: */
 /* http://www.ime.usp.br/~pf/algoritmos/aulas/quick.html */
@@ -12,15 +13,21 @@ int separa (int v[], int p, int r);
 void quicksort (int v[], int p, int r);
 
 int main(void){
-	int i, n=0, v[1000];
-	printf("Tamanho do vetor(<=1000): ");
+	int i, n=0, *v;
+	printf("Tamanho do vetor: ");
 	scanf("%d",&n);
+	v = malloc(n * sizeof(int *));
+        if (v == NULL) {
+                fprintf(stderr, "Não há memória disponível para alocar vetor desse tamanho.\n");
+                exit(EXIT_FAILURE);
+	}
 	for (i=0;i<n; i++){scanf("%d",&v[i]);};
 	printf("Vetor original:\n");
 	for (i=0;i<n; i++){printf("%d ",v[i]);}; printf("\n");
 	quicksort(v,0,n-1);
 	printf("Vetor ordenado:\n");
 	for (i=0;i<n; i++){printf("%d ",v[i]);}; printf("\n");
+	free(v);
 	return 0;
 }
 
