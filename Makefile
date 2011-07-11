@@ -16,9 +16,7 @@ LIBSELECT=64
 endif
 
 # Configuraćões específicas de cada alvo
-all_linux: LDFLAGS=-lm
 all_linux clean_linux: SYSTEM=Linux
-all_win32: LDFLAGS=-lm
 all_win32 clean_win32: SYSTEM=Win32-gcc
 all_win32 clean_win32: SUF=.exe
 # Nome do binário - Válido para alvos que definem SYSTEM
