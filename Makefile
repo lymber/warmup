@@ -6,7 +6,7 @@ Target = quick
 MainSources = quicksort.c
 
 CC = gcc
-CFLAGS = -O0 -ffast-math -g -Wall -W --ansi --pedantic
+CFLAGS = -Os -ffast-math -g -Wall -W --ansi --pedantic
 
 # Alvo default é Linux
 all: all_linux
