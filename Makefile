@@ -1,9 +1,11 @@
+MAIN_TARGET=quicksort
+
 CC = gcc
 CFLAGS = -Os -ffast-math -g -Wall -W --ansi --pedantic
 
-all: quicksort
+all: $(MAIN_TARGET)
 
 clean:
-	@$(RM) $(DESTPATH)
+	$(RM) -f *.o *~ $(MAIN_TARGET)
 
 .PHONY: all clean
