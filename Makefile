@@ -1,13 +1,7 @@
-Target = quick
-MainSources = quicksort.c
-
 CC = gcc
 CFLAGS = -Os -ffast-math -g -Wall -W --ansi --pedantic
 
-DESTPATH = ./$(Target)$(SUF)
-
-all:
-	$(CC) $(CCFLAGS) $(MainSources) $(Objects) -o $(DESTPATH) $(LDFLAGS)
+all: quicksort
 
 clean:
 	@$(RM) $(DESTPATH)
