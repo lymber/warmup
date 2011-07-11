@@ -5,9 +5,8 @@ Target = quick
 # ObjectSources = funcoes.c
 MainSources = quicksort.c
 
-# Općões genéricas do compilador
-CXX = gcc
-CXXFLAGS = -O0 -ffast-math -g -Wall -W --ansi --pedantic
+CC = gcc
+CFLAGS = -O0 -ffast-math -g -Wall -W --ansi --pedantic
 
 # Alvo default é Linux
 all: all_linux
@@ -26,11 +25,7 @@ all_win32 clean_win32: SUF=.exe
 DESTPATH = ./$(Target)$(SUF)
 
 all_linux all_win32:
-#	$(warning Building objects...)
-#Gerando os objects
-#	$(CXX) -c $(CXXFLAGS) $(ObjectSources) -o $(Objects)
-	$(warning Building quick...)
-	$(CXX) $(CXXFLAGS) $(MainSources) $(Objects) -o $(DESTPATH) $(LDFLAGS)
+	$(CC) $(CCFLAGS) $(MainSources) $(Objects) -o $(DESTPATH) $(LDFLAGS)
 
 clean: clean_linux clean_win32
 	$(warning Cleaning...)
