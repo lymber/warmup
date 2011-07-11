@@ -47,10 +47,9 @@ int separa (int v[], int p, int r){
 
 void quicksort (int v[], int p, int r){
 	int j;
-
-	if (p < r) {
+	while (p < r){
 		j = separa (v, p, r);
 		quicksort (v, p, j-1);
-		quicksort (v, j+1, r);
+		p = j + 1;
 	}
 }
