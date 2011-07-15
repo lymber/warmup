@@ -1,3 +1,5 @@
 *~
-quicksort
 *.o
+data
+warmup
+random
