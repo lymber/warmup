@@ -1,5 +1,5 @@
 *~
 *.o
-data
+testing/data*
 warmup
-random
+testing/random
