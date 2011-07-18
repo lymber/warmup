@@ -1,5 +1,6 @@
 *~
 *.o
 testing/data*
+testing/lu*
 warmup
 testing/random
