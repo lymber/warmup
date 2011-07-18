@@ -1,4 +1,4 @@
-OBJECTS = quicksort.o main.o
+OBJECTS = quicksort.o lu.o main.o
 TARGET = warmup
 
 CC = gcc
