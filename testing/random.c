@@ -12,8 +12,8 @@
 
 int main()
 {
-	int i, j, soma;
-	int m[matrixsize][matrixsize];
+	int i, j;
+	double soma, m[matrixsize][matrixsize];
 	FILE *array, *matrix;
 
 	srand(time(NULL));
@@ -28,20 +28,20 @@ int main()
 	printf("Generating %d x %d random diagonally dominant matrix...", matrixsize, matrixsize);
 	for (i = 0; i < matrixsize; i++){
 		for (j = 0; j < matrixsize; j++){
-			if (j != i) {m[i][j] = INT_MAX/matrixsize * (double) rand () / ((double) RAND_MAX + 1);}
+			if (j != i) {m[i][j] = (double) rand () / ((double) RAND_MAX + 1);}
 			else{m[i][i] = 0;}
 		}
 	}
 	for (i = 0; i < matrixsize; i++){
 		soma=0;
 		for (j = 0; j < matrixsize; j++){soma = soma + abs(m[i][j]);}
-		m[i][i] = soma;
+		m[i][i] = soma+1;
 	}
 	matrix = fopen ("./data-matrix", "w");
 	for (i = 0; i < matrixsize; i++){
 		for (j = 0; j<matrixsize-1; j++){
-			fprintf(matrix, "%d", m[i][j]); putc(SPACE, matrix);}
-		fprintf(matrix, "%d", m[i][j]); putc(NEWLINE, matrix);
+			fprintf(matrix, "%f", m[i][j]); putc(SPACE, matrix);}
+		fprintf(matrix, "%f", m[i][j]); putc(NEWLINE, matrix);
 	}
 	fclose(matrix);
 	printf(" Done!\n");
