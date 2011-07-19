@@ -1,3 +1,5 @@
+#ifndef QUICKSORT_H
+#define QUICKSORT_H
 #include <stdlib.h>
 
 /* Recebe vetor de inteiros v[p..r] com p < r. Rearranja os elementos do vetor e */
@@ -7,3 +9,4 @@ int separa (int v[], int p, int r);
 /* Recebe vetor de inteiros v[p..r] com p <= r. Rearranja os elementos do vetor */
 /* em ordem crescente. */
 void quicksort (int v[], int p, int r);
+#endif
