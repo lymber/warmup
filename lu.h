@@ -1,7 +1,5 @@
 #ifndef LU_H
 #define LU_H
-#include<stdlib.h>
-
 /* Recebe inteiros m e n e um ponteiro para **M e armazena em **M  */
 /* as entradas de uma matriz de floats com m linhas e n colunas. */
 void aloca_matriz(int m, int n, float ***M);
