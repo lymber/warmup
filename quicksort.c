@@ -3,7 +3,7 @@
 
 /* Recebe vetor de inteiros v[p..r] com p < r. Rearranja os elementos do vetor e */
 /* devolve j em p..r tal que v[p..j-1] <= v[j] < v[j+1..r]. */
-int separa (int v[], int p, int r){
+static int separa (int v[], int p, int r){
 	int c = v[p], i = p+1, j = r, t;
 	while (i <= j) {
 		if (v[i] <= c) ++i;
