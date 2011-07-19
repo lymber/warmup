@@ -3,7 +3,7 @@
 #include "lu.h"
 
 #define vecsize 1000000
-#define matrixsize 5
+#define matrixsize 1000
 
 int main(void){
 
@@ -55,21 +55,20 @@ int main(void){
 	printf("\t Done!\n");
 	fclose(matrix);
 
-        imprime_matriz(matrixsize, matrixsize, M);
+        /* imprime_matriz(matrixsize, matrixsize, M); */
 
 	printf("\t Factorizing %d x %d matrix...", matrixsize, matrixsize);
         lu(matrixsize, M, L, U);
-	imprime_matriz(matrixsize, matrixsize, L);
-	imprime_matriz(matrixsize, matrixsize, U);
+	/* imprime_matriz(matrixsize, matrixsize, L); */
+	/* imprime_matriz(matrixsize, matrixsize, U); */
 	printf("\t Done!\n");
 
-        printf("M=L*U:\n");
-        multiplica(matrixsize, matrixsize, matrixsize , L, U, M);
-        imprime_matriz(matrixsize, matrixsize, M);
+        /* printf("M=L*U:\n"); */
+        /* multiplica(matrixsize, matrixsize, matrixsize , L, U, M); */
+        /* imprime_matriz(matrixsize, matrixsize, M); */
 	libera(matrixsize, &M);
         libera(matrixsize, &L);
         libera(matrixsize, &U);
-
 
 	return 0;
 }
