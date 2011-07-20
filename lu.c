@@ -1,23 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "auxiliary.h"
 
 void aloca_matriz(int m, int n, float ***M)
 {
 
 	int i;
-	*M = malloc(m * sizeof(float *));
-	if (*M == NULL) {
-		fprintf(stderr,
-			"Not enough memory to allocate the matrix.\n");
-		exit(EXIT_FAILURE);
-	}
+	*M = mallocX(m * sizeof(float *));
 	for (i = 0; i < m; i++) {
-		(*M)[i] = malloc(n * sizeof(float));
-		if ((*M)[i] == NULL) {
-			fprintf(stderr,
-				"Not enough memory to allocate matirx's %i-th\n.", i);
-			exit(EXIT_FAILURE);
-		}
+		(*M)[i] = mallocX(n * sizeof(float));
 	}
 }
 

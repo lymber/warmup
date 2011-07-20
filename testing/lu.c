@@ -73,20 +73,9 @@ void aloca_matriz(int m, int n, float ***M)
 {
 
 	int i;			/* indexador para cada vetor em M */
-	*M = malloc(m * sizeof(float *));
-	if (*M == NULL) {
-		fprintf(stderr,
-			"Não há memória disponível para alocar a matriz\n");
-		exit(EXIT_FAILURE);
-	}
+	*M = mallocX(m * sizeof(float *));
 	for (i = 0; i < m; i++) {
-		(*M)[i] = malloc(n * sizeof(float));
-		if ((*M)[i] == NULL) {
-			fprintf(stderr,
-				"Não há memória disponível para alocar a linha %i da matriz\n",
-				i);
-			exit(EXIT_FAILURE);
-		}
+		(*M)[i] = mallocX(n * sizeof(float));
 	}
 }
 

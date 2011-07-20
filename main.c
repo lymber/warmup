@@ -3,6 +3,7 @@
 
 #include "quicksort.h"
 #include "lu.h"
+#include "auxiliary.h"
 
 #define vecsize 1000000
 #define matrixsize 1000
@@ -13,11 +14,7 @@ int main(void){
 	int i=0, j=0, *v;
 	float **M, **L, **U;
 
-	v = malloc(vecsize * sizeof(int *));
-        if (v == NULL) {
-                fprintf(stderr, "Can't allocate such a big array ...\n");
-                exit(EXIT_FAILURE);
-	}
+	v = mallocX(vecsize * sizeof(int *));
 
 	printf("1) Sorting big array of integers test:\n");
 
