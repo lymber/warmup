@@ -8,7 +8,7 @@ int main(void)
 {
 
 	int i, j;
-	int n;		/* linhas e colunas da matriz */
+	int n;			/* linhas e colunas da matriz */
 	float **M, **L, **U;	/* guarda as entradas das matrizes M, L e U */
 
 	printf("\nInforme o número de linhas e colunas da matriz M: ");
@@ -17,8 +17,10 @@ int main(void)
 	aloca_matriz(n, n, &L);
 	aloca_matriz(n, n, &U);
 
-	for (i = 0; i < n; i++){
-		for (j = 0; j < n; j++){scanf("%20.20f",&M[i][j]);}
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++) {
+			scanf("%20.20f", &M[i][j]);
+		}
 	}
 
 	/* M[0][0]=2;M[0][1]=1;M[0][2]=1; */
@@ -30,7 +32,7 @@ int main(void)
 	lu(n, M, L, U);
 
 	printf("M=L*U:\n");
-	multiplica(n, n, n , L, U, M);
+	multiplica(n, n, n, L, U, M);
 	imprime_matriz(n, n, M);
 
 	printf("Desalocando as matrizes envolvidas...");
@@ -55,12 +57,13 @@ void aloca_matriz(int m, int n, float ***M)
 
 /* ---------------------------------------------------------------------- */
 
-
 void copia_matriz(int m, int n, float **X, float **Y)
 {
 	int i, j;
-	for(i = 0; i < m; i++) {
-		for (j = 0; j < n; j++){Y[i][j]=X[i][j];}
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			Y[i][j] = X[i][j];
+		}
 	}
 }
 
@@ -100,7 +103,9 @@ void multiplica(int m, int n, int l, float **M, float **N, float **P)
 	for (i = 0; i < m; i++) {
 		for (j = 0; j < l; j++) {
 			P[i][j] = 0;
-			for (k = 0; k < n; k++) {P[i][j] = P[i][j] + M[i][k] * N[k][j];}
+			for (k = 0; k < n; k++) {
+				P[i][j] = P[i][j] + M[i][k] * N[k][j];
+			}
 		}
 	}
 }
@@ -110,7 +115,9 @@ void multiplica(int m, int n, int l, float **M, float **N, float **P)
 void comblin(int n, float k1, float k2, float u[], float v[], float w[])
 {
 	int i;
-	for (i = 0; i < n; i++) {w[i] = k1 * u[i] + k2 * v[i];};
+	for (i = 0; i < n; i++) {
+		w[i] = k1 * u[i] + k2 * v[i];
+	};
 }
 
 /* ---------------------------------------------------------------------- */
@@ -119,11 +126,13 @@ void lu(int n, float **M, float **L, float **U)
 {
 	int i, j;		/* indices que percorrem a matriz M */
 	copia_matriz(n, n, M, U);
-	for (j = 0; j < n; j++){L[j][j]=1;}
+	for (j = 0; j < n; j++) {
+		L[j][j] = 1;
+	}
 	printf("Passos da fatoração:\n");
-	for (j = 0; j < n-1; j++) {
-		for (i = j+1; i < n; i++) {
-			L[i][j]=U[i][j]/U[j][j];
+	for (j = 0; j < n - 1; j++) {
+		for (i = j + 1; i < n; i++) {
+			L[i][j] = U[i][j] / U[j][j];
 			comblin(n, -L[i][j], 1, U[j], U[i], U[i]);
 			imprime_matriz(n, n, U);
 		}
