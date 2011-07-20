@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "auxiliary.h"
+#include "include/auxiliary.h"
 
 /*
   The mallocX() function allocates size bytes and returns a pointer to the

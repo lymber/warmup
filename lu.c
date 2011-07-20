@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "auxiliary.h"
+
+#include "include/auxiliary.h"
 
 void aloca_matriz(int m, int n, float ***M)
 {
