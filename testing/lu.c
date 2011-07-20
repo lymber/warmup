@@ -12,13 +12,13 @@ int main(void)
 	float **M, **L, **U;	/* guarda as entradas das matrizes M, L e U */
 
 	printf("\nInforme o número de linhas e colunas da matriz M: ");
-	scanf("%d", &n);
+	scanf("%10d", &n);
 	aloca_matriz(n, n, &M);
 	aloca_matriz(n, n, &L);
 	aloca_matriz(n, n, &U);
 
 	for (i = 0; i < n; i++){
-		for (j = 0; j < n; j++){scanf("%f",&M[i][j]);}
+		for (j = 0; j < n; j++){scanf("%20.20f",&M[i][j]);}
 	}
 
 	/* M[0][0]=2;M[0][1]=1;M[0][2]=1; */
