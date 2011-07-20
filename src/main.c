@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/quicksort.h"
-#include "include/lu.h"
-#include "include/auxiliary.h"
+#include "../include/quicksort.h"
+#include "../include/lu.h"
+#include "../include/auxiliary.h"
 
 #define vecsize 1000000
 #define matrixsize 1000
