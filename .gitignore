@@ -1,6 +1,6 @@
 *~
 *.o
-testing/data*
-testing/lu*
+test/data*
+test/lu*
 warmup
-testing/random
+test/random
