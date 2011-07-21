@@ -1,5 +1,5 @@
-OBJECTS = quicksort.o lu.o main.o
-TARGET = warmup
+OBJECTS = src/auxiliary.o src/quicksort.o src/lu.o src/main.o
+TARGET = src/warmup
 
 CC = gcc
 CFLAGS = -Os -ffast-math -g -Wall -W --ansi --pedantic
@@ -7,10 +7,10 @@ CFLAGS = -Os -ffast-math -g -Wall -W --ansi --pedantic
 all: $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(TARGET)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $<
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) -f *.o *~ $(TARGET)
+	$(RM) -f $(OBJECTS) *~ $(TARGET)
 
 .PHONY: all clean

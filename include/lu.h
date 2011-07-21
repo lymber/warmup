@@ -1,5 +1,5 @@
-#include<stdlib.h>
-
+#ifndef LU_H
+#define LU_H
 /* Recebe inteiros m e n e um ponteiro para **M e armazena em **M  */
 /* as entradas de uma matriz de floats com m linhas e n colunas. */
 void aloca_matriz(int m, int n, float ***M);
@@ -28,3 +28,4 @@ void comblin(int n, float k1, float k2, float u[], float v[], float w[]);
 /* Devolve matrizes L e U, respectivamente triangulares inferior (n x n) e */
 /* superior (n x n) tais que M=LU. */
 void lu(int n, float **M, float **L, float **U);
+#endif
