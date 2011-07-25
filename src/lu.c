@@ -3,7 +3,7 @@
 
 #include "../include/auxiliary.h"
 
-void aloca_matriz(int m, int n, float ***M)
+void matrix_alloc(int m, int n, float ***M)
 {
 
 	int i;
@@ -13,7 +13,7 @@ void aloca_matriz(int m, int n, float ***M)
 	}
 }
 
-void libera(int m, float ***M)
+void matrix_free(int m, float ***M)
 {
 
 	int i;
@@ -23,7 +23,7 @@ void libera(int m, float ***M)
 	free(*M);
 }
 
-void copia_matriz(int m, int n, float **X, float **Y)
+void matrix_copy(int m, int n, float **X, float **Y)
 {
 
 	int i, j;
@@ -34,19 +34,20 @@ void copia_matriz(int m, int n, float **X, float **Y)
 	}
 }
 
-void imprime_matriz(int m, int n, float **M)
+void matrix_print(int m, int n, float **M)
 {
 
-	int i, j /* indices para percorrer a matriz */ ;
+	int i, j;
 	for (i = 0; i < m; i++) {
-		for (j = 0; j < n; j++)
+		for (j = 0; j < n; j++) {
 			printf("%.4f\t", M[i][j]);
+		}
 		printf("\n");
 	}
 	printf("\n");
 }
 
-void multiplica(int m, int n, int l, float **M, float **N, float **P)
+void matrix_multiply(int m, int n, int l, float **M, float **N, float **P)
 {
 
 	int i, j, k;
@@ -60,7 +61,7 @@ void multiplica(int m, int n, int l, float **M, float **N, float **P)
 	}
 }
 
-void comblin(int n, float k1, float k2, float u[], float v[], float w[])
+void lin_comb(int n, float k1, float k2, float u[], float v[], float w[])
 {
 
 	int i;
@@ -73,14 +74,14 @@ void lu(int n, float **M, float **L, float **U)
 {
 
 	int i, j;
-	copia_matriz(n, n, M, U);
+	matrix_copy(n, n, M, U);
 	for (j = 0; j < n; j++) {
 		L[j][j] = 1;
 	}
 	for (j = 0; j < n - 1; j++) {
 		for (i = j + 1; i < n; i++) {
 			L[i][j] = U[i][j] / U[j][j];
-			comblin(n, -L[i][j], 1, U[j], U[i], U[i]);
+			lin_comb(n, -L[i][j], 1, U[j], U[i], U[i]);
 		}
 	}
 }
