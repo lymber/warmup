@@ -23,17 +23,6 @@ void matrix_free(int m, float ***M)
 	free(*M);
 }
 
-void matrix_copy(int m, int n, float **X, float **Y)
-{
-
-	int i, j;
-	for (i = 0; i < m; i++) {
-		for (j = 0; j < n; j++) {
-			Y[i][j] = X[i][j];
-		}
-	}
-}
-
 void matrix_print(int m, int n, float **M)
 {
 
@@ -61,7 +50,22 @@ void matrix_multiply(int m, int n, int l, float **M, float **N, float **P)
 	}
 }
 
-void lin_comb(int n, float k1, float k2, float u[], float v[], float w[])
+/* Takes ints m and n, **X **Y, treated as an m x n matrices. */
+/* Copies X to Y */
+static void matrix_copy(int m, int n, float **X, float **Y)
+{
+
+	int i, j;
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			Y[i][j] = X[i][j];
+		}
+	}
+}
+
+/* Takes an int n, floats k1 and k2 e arrays u[0..n] and v[0..n]. */
+/* Stores in w the linear combination  k1*u+k2*v. */
+static void lin_comb(int n, float k1, float k2, float u[], float v[], float w[])
 {
 
 	int i;
