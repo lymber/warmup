@@ -53,7 +53,7 @@ int main(void)
 	while (!feof(matrix)) {
 		for (i = 0; i < matrixsize; i++) {
 			for (j = 0; j < matrixsize; j++) {
-				fscanf(matrix, "%20.20f", &M[i][j]);
+				fscanf(matrix, "%20f", &M[i][j]);
 			}
 		}
 	}
