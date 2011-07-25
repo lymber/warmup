@@ -20,7 +20,7 @@ int main(void)
 	printf("1) Sorting big array of integers test:\n");
 
 	printf("\t Reading data from file...");
-	array = fopen("./testing/data-array", "r");
+	array = fopen("./test/data-array", "r");
 	if (array == NULL) {
 		printf(" File not found!\n");
 		exit(EXIT_FAILURE);
@@ -45,7 +45,7 @@ int main(void)
 	matrix_alloc(matrixsize, matrixsize, &U);
 
 	printf("\t Reading data from file...");
-	matrix = fopen("./testing/data-matrix", "r");
+	matrix = fopen("./test/data-matrix", "r");
 	if (matrix == NULL) {
 		printf(" File not found!\n");
 		exit(EXIT_FAILURE);
