@@ -57,12 +57,12 @@ int main(void)
 			}
 		}
 	}
-	printf("\t Done!\n");
+	printf(" Done!\n");
 	fclose(matrix);
 
 	printf("\t Factorizing %d x %d matrix...", matrixsize, matrixsize);
 	lu(matrixsize, M, L, U);
-	printf("\t Done!\n");
+	printf(" Done!\n");
 
 	matrix_free(matrixsize, &M);
 	matrix_free(matrixsize, &L);
