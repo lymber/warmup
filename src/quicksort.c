@@ -1,8 +1,8 @@
-/* Funções abaixo copiadas da página do professor Paulo Feofiloff: */
+/* These functions were shamelessly copied from professor Paulo Feofiloff's webpage: */
 /* http://www.ime.usp.br/~pf/algoritmos/aulas/quick.html */
 
-/* Recebe vetor de inteiros v[p..r] com p < r. Rearranja os elementos do vetor e */
-/* devolve j em p..r tal que v[p..j-1] <= v[j] < v[j+1..r]. */
+/* Takes an array of ints v[p..r] with p < r.  Returns int j and shuffles the */
+/* elements of this array such that v[p..j-1] <= v[j] < v[j+1..r]. */
 static int separa(int v[], int p, int r)
 {
 	int c = v[p], i = p + 1, j = r, t;
@@ -21,8 +21,8 @@ static int separa(int v[], int p, int r)
 	return j;
 }
 
-/* Recebe vetor de inteiros v[p..r] com p <= r. Rearranja os elementos do vetor */
-/* em ordem crescente. */
+/* Take an array of ints v[p..r] with p <= r. */
+/*  Returns in *v a sorted permutation of its elements. */
 void quicksort(int v[], int p, int r)
 {
 	int j;
