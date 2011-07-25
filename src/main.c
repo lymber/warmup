@@ -40,9 +40,9 @@ int main(void)
 
 	printf("2) LU factorizations of big square matrixt:\n");
 
-	aloca_matriz(matrixsize, matrixsize, &M);
-	aloca_matriz(matrixsize, matrixsize, &L);
-	aloca_matriz(matrixsize, matrixsize, &U);
+	matrix_alloc(matrixsize, matrixsize, &M);
+	matrix_alloc(matrixsize, matrixsize, &L);
+	matrix_alloc(matrixsize, matrixsize, &U);
 
 	printf("\t Reading data from file...");
 	matrix = fopen("./testing/data-matrix", "r");
@@ -60,20 +60,13 @@ int main(void)
 	printf("\t Done!\n");
 	fclose(matrix);
 
-	/* imprime_matriz(matrixsize, matrixsize, M); */
-
 	printf("\t Factorizing %d x %d matrix...", matrixsize, matrixsize);
 	lu(matrixsize, M, L, U);
-	/* imprime_matriz(matrixsize, matrixsize, L); */
-	/* imprime_matriz(matrixsize, matrixsize, U); */
 	printf("\t Done!\n");
 
-	/* printf("M=L*U:\n"); */
-	/* multiplica(matrixsize, matrixsize, matrixsize , L, U, M); */
-	/* imprime_matriz(matrixsize, matrixsize, M); */
-	libera(matrixsize, &M);
-	libera(matrixsize, &L);
-	libera(matrixsize, &U);
+	matrix_free(matrixsize, &M);
+	matrix_free(matrixsize, &L);
+	matrix_free(matrixsize, &U);
 
 	return 0;
 }
