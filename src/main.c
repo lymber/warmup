@@ -38,7 +38,7 @@ int main(void)
 
 	free(v);
 
-	printf("2) LU factorizations of big square matrixt:\n");
+	printf("2) LU factorizations of big square matrix:\n");
 
 	matrix_alloc(matrixsize, matrixsize, &M);
 	matrix_alloc(matrixsize, matrixsize, &L);
