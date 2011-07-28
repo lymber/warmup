@@ -1,6 +1,5 @@
 *~
-*.o
-test/data*
-test/lu*
-warmup
-test/random
+src/*.o
+src/*~
+src/warmup
+include/*~
