@@ -1,4 +1,4 @@
-OBJECTS = src/auxiliary.o src/quicksort.o src/lu.o src/main.o
+OBJECTS = src/auxiliary.o src/array.o src/matrix.o src/main.o
 TARGET = src/warmup
 
 CC = gcc
