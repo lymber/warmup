@@ -7,7 +7,7 @@ void array_gen(int vecsize, int *v)
 
 	srand(time(NULL));
 
-	for (i = 0; i <= vecsize; i++) {
+	for (i = 0; i < vecsize; i++) {
 		v[i]=rand();
 	}
 }
