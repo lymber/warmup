@@ -1,5 +1,3 @@
 *~
-src/*.o
-src/*~
+*.o
 src/warmup
-include/*~
