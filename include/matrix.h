@@ -9,6 +9,8 @@ void matrix_alloc(int m, int n, float ***M);
 /* "row by row". */
 void matrix_free(int m, float ***M);
 
+/* Takes int matrixsize and return a random square matrix of floats */
+/* with matrixsize rows and columns */
 void matrix_gen(int matrixsize, float **M);
 
 /* Takes ints m and n and prints the block [0..m]x[0..n] of **M. */
