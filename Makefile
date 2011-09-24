@@ -1,4 +1,4 @@
-OBJECTS = src/auxiliary.o src/array.o src/matrix.o src/main.o
+OBJECTS = src/auxiliary.o src/array.o src/matrix.o src/main.o src/timing.o
 TARGET = src/warmup
 
 CC = gcc
