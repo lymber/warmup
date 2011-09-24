@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			quicksort(v, 0, vecsize - 1);
 			tEnd = takethetime();
 			printf("\tDone!\n");
-			printf("\tTotal time spent to sort the array: %f seconds", (tEnd-tStart)/1000000.0);
+			printf("\tTotal time spent to sort the array: %f seconds\n", (tEnd-tStart)/1000000.0);
 
 			free(v);
 
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 			lu(matrixsize, M, L, U);
 			tEnd = takethetime();
 			printf("\tDone!\n");
-			printf("\tTotal time spent to factor the matrix: %f seconds", (tEnd-tStart)/1000000.0);
+			printf("\tTotal time spent to factor the matrix: %f seconds\n", (tEnd-tStart)/1000000.0);
 
 			matrix_free(matrixsize, &M);
 			matrix_free(matrixsize, &L);
